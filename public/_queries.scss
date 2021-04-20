@@ -1,0 +1,148 @@
+@import "_variables";
+
+@media (max-width:800px) {
+  nav{
+    width: 100%;
+    position: fixed;
+    background-color: white!important;
+  }
+  main{
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh!important;
+    // padding: 0px!important;
+    img{
+      right: auto;
+      width: auto!important;
+      height: 100vh!important;
+    }
+    #kp-slide{
+      height: 545px!important;
+      scrollbar-width:none;
+      #prod-img{
+        height: 100%!important;
+      }
+      #item-desc{
+        background-color: $theme;
+        color: white!important;
+        width: auto!important;
+        padding:20px!important;
+        .size{
+          border-color: white!important;
+        }
+      }
+    }
+    #main-bg{
+      display: none;
+    }
+    div{
+      width: 100%!important;
+      padding: 0px!important;
+      h1,p,span{
+        text-align: center;
+      }
+      p,span{
+        width: 100%!important;
+      }
+    }
+  }
+}
+
+@media (min-width:1915px) {
+
+
+  .circle{
+    &-s{
+      height: 150px!important;
+      width: 150px!important;
+    }
+    &-m{
+      height: 200px!important;
+      width: 200px!important;
+    }
+    &-l{
+      height: 250px!important;
+      width: 250px!important;
+    }
+  }
+
+  p{
+    font-size: 28px!important;
+  }
+  h1{
+    font-size: 94px;
+  }
+  a{
+    font-size: 24px;
+  }
+  #main-bg{
+    right: 5%!important;
+  }
+  #main-bg,#contact-bg,#contact-bg2{
+    width: auto!important;
+    height: 100%!important;
+  }
+  #kp-slide{
+    height: 750px!important;
+  }
+  #dsc{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    #descr{
+      width: 100%!important;
+    }
+    span{
+      font-size: 24px!important;
+    }
+    .btn{
+      width: 100%!important;
+    }
+  }
+  .logo{
+    width: 48px!important;
+    height: 48px!important;
+  }
+}
+
+@media (min-width:2555px) {
+
+  .circle{
+    &-s{
+      height: 250px!important;
+      width: 250px!important;
+    }
+    &-m{
+      height: 300px!important;
+      width: 300px!important;
+    }
+    &-l{
+      height: 350px!important;
+      width: 350px!important;
+    }
+  }
+
+  svg.MuiSvgIcon-root{
+    font-size: 4rem;
+  }
+  p{
+    font-size: 38px!important;
+  }
+  h1{
+    font-size: 100px!important;
+  }
+  a{
+    font-size: 32px!important;
+  }
+  #prods{
+    div.m-l-2:nth-child(1) {
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+    #kp-slide{
+      height: 900px!important;
+    }
+  }
+}
