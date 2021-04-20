@@ -23,8 +23,8 @@ function Contact(props){
       {!mobile &&
           <div className="flex flex-jc-ce h-per w-50" id="white">
             <div className="flex" id="bg-cont">
-              <img src="../img/main 2.png" id="contact-bg"/>
-              <img src="../img/Main Image.png" id="contact-bg2"/>
+              <img src="./img/main 2.png" id="contact-bg"/>
+              <img src="./img/Main Image.png" id="contact-bg2"/>
             </div>
             <div className="flex flex-jc-ce flex-ai-ce flex-flx-col w-80 align-right h-per">
               <h1 id="head-text" className="align-center">Lorem Ipsum</h1>
@@ -43,7 +43,7 @@ function Contact(props){
       {mobile &&
         <div className="flex flex-flx-col flex-ai-ce flex-jc-ce p-20 h-per f-col">
 
-        <img src="../img/mobile 2.png" className="w-100" id="contact-bg"/>
+        <img src="./img/mobile 2.png" className="w-100" id="contact-bg"/>
         <div className="flex flex-jc-e flex-ai-ce flex-flx-col w-50 align-right h-per">
           <h1 id="head-text" className="align-center">Lorem Ipsum</h1>
           <p className="align-center m-t-5 w-50">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>

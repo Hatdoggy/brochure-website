@@ -33,7 +33,7 @@ function Content(){
           <Instagram fontSize={large?"large":"default"} style={{fill:"#2c2c2c"}}/>
         </div>
     </div>
-      <img className={mobile && "h-per"} src={mobile?"../img/Mobile.png":"../img/Main Image.png"} id="main-bg"/>
+      <img className={mobile && "h-per"} src={mobile?"./img/Mobile.png":"./img/Main Image.png"} id="main-bg"/>
     </main>
   );
 }

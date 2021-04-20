@@ -18,7 +18,7 @@ function Header(prop){
     {mobile &&
       <header className="flex w-100">
       <div className="flex w-100 p-20 flex-ai-ce">
-        <img src="../img/KPLogo.jpg" className="logo"/>
+        <img src="./img/KPLogo.jpg" className="logo"/>
       </div>
       <Button>
         <Menu onClick={()=>setBtn(true)} onClose={()=>setBtn(false)}/>
