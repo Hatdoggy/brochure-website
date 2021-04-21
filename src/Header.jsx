@@ -25,8 +25,9 @@ function Header(prop){
           <Drawer anchor="top" open={btn} onClose={()=>{setBtn(!btn)}}>
             <div className="flex flex-jc-e flex-flx-col flex-ai-e">
               <a className="m-r-2 p-20"  name="contact"><Link to="about" spy={true} smooth={true}>About</Link></a>
-              <a className="m-r-2 p-20"  name="contact"><Link to="prods" spy={true} smooth={true}>Product</Link></a>
+              <a className="m-r-2 p-20"  name="contact"><Link to="prods" spy={true} smooth={true}>Feature products</Link></a>
               <a className="m-r-2 p-20"  name="contact"><Link to="contact" spy={true} smooth={true}>Contact</Link></a>
+              <a className="m-r-2 p-20"  name="contact"><Link to="contact" spy={true} smooth={true}>More Products</Link></a>
             </div>
           </Drawer>
       </Button>
@@ -35,10 +36,10 @@ function Header(prop){
     {!mobile &&
       <div className="flex p-20 flex-ai-ce">
         <a className="" onClick={prop.set} name="about">About</a>
-        <a className="m-l-5" onClick={prop.set}  name="product">Product</a>
+        <a className="m-l-5" onClick={prop.set}  name="product">Featured</a>
         <a className="m-l-5 m-r-5" onClick={prop.set}  name="contact">Contact</a>
           <div className="m-l-2">
-            <img src="../img/KPLogo.jpg" className="logo"/>
+            <img src="./img/KPLogo.jpg" className="logo"/>
           </div>
       </div>
     }

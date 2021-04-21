@@ -1,11 +1,42 @@
 @import "_variables";
 
+@media (max-width:480px) {
+  #about{
+    padding: 0!important;
+  }
+}
+
+@media (min-width:481px) and (max-width:800px) {
+  p{
+    font-size: 16px!important;
+  }h1{
+    font-size: 32px!important;
+  }
+
+  body{
+    background-image: url("./img/BG1.jpg")!important;
+  }
+
+    #prods{
+      height: 100vh!important;
+      #kp-slide,img{
+        height: 250px!important;
+      }
+      .btn{
+        width: 100%!important;
+      }
+    }
+}
+
 @media (max-width:800px) {
+
   nav{
     width: 100%;
     position: fixed;
     background-color: white!important;
   }
+
+
   main{
     justify-content: center;
     align-items: center;
