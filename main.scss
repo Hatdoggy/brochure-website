@@ -33,9 +33,11 @@
   right: 15%;
   bottom: 0;
   position: absolute;
+  opacity: .5;
 }
 
 #bg-cont{
+  opacity:.5;
   #contact-bg,#contact-bg2{
     width: 570px;
     height: 650px;
@@ -93,6 +95,63 @@ html{
   flex-grow: 1;
   &-3{
     flex-grow: 3;
+  }
+}
+
+.layout{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row!important;
+  justify-content:center!important;
+  .container{
+    margin-left:2%;
+    height: auto!important;
+    width: 150px!important;
+  }
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
+  grid-gap: 1rem;
+  grid-auto-flow: dense;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  transition: .5s ease-in-out;
+
+  .container{
+    height: 350px;
+    width: 250px;
+    overflow: hidden;
+    div{
+      overflow: hidden;
+    }
+    img{
+      &:hover{
+        cursor: pointer;
+        transform: scale(1.5);
+        transition: .5s;
+      }
+    }
+  }
+
+  img{
+    height: 100%;
+    object-fit: cover;
+    width:100%;
+  }
+}
+
+#banner{
+  background-image: url(https://images.unsplash.com/photo-1445205170230-053b83016050?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZmFzaGlvbnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 350px;
+  margin-bottom: 2%;
+  div{
+    color: white;
+    background: rgba(0,0,0,0.5);
   }
 }
 
@@ -193,6 +252,7 @@ svg{
   padding:10px;
   width: 50%;
   &:hover{
+    cursor: pointer;
     color:white;
     background-color: $theme;
     border: none;
@@ -308,6 +368,20 @@ body{
   }
   &-cus{
     width: 455px;
+  }
+}
+
+.style{
+  a{
+    &:hover{
+      cursor:pointer;
+    }
+    svg{
+      &:hover{
+        fill:$theme!important;
+        transition: 0.5s;
+      }
+    }
   }
 }
 
@@ -467,6 +541,9 @@ body{
   }
   &-16{
     font-size: 16px;
+  }
+  &-rob{
+    font-family: $p-font;
   }
 }
 
