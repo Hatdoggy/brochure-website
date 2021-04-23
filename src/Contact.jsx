@@ -1,8 +1,8 @@
-import React from 'react';
+import React,{useEffect,useState} from 'react';
 import ReactDOM from 'react-dom';
 import {Facebook,Twitter,Instagram} from '@material-ui/icons';
 import { useMediaQuery } from 'react-responsive';
-
+import anime from 'animejs';
 
 function Contact(props){
 
@@ -18,6 +18,18 @@ function Contact(props){
     document.body.style.backgroundImage = "url('./img/BG3.jpg')";
   }
 
+  const [load,setLoad] =useState(false);
+
+  useEffect(()=>{
+    !load&&anime({
+      targets: "#bg-cont",
+      opacity:1,
+      duration:1500,
+      delay:500,
+      complete:setLoad(true)
+    });
+  });
+
   return(
     <main className="flex flex-jc-e flex-ai-e m-20 p-20 grow z-1 pos-rel" id="contact">
       {!mobile &&
@@ -32,9 +44,8 @@ function Contact(props){
               <hr/>
               <p className="align-center m-t-5 w-80">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
               <div className="flex flex-jc-ce m-t-5">
-                <Facebook fontSize={large?"large":"default"} style={{fill:"#2c2c2c"}} className={props.classes.logo}/>
-                <Twitter fontSize={large?"large":"default"} style={{fill:"#2c2c2c"}}/>
-                <Instagram fontSize={large?"large":"default"} style={{fill:"#2c2c2c"}}/>
+                <a href="https://www.facebook.com/kpaestheticsph"><Facebook fontSize={large?"large":"default"} style={{fill:"#2c2c2c"}} className={props.classes.logo}/></a>
+                <a href="https://www.instagram.com/kpaestheticsph/"><Instagram fontSize={large?"large":"default"} style={{fill:"#2c2c2c"}}/></a>
               </div>
             </div>
           </div>
