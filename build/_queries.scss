@@ -4,9 +4,25 @@
   #about{
     padding: 0!important;
   }
+  #moreHead{
+    background-image: url("./img/BG3.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .container{
+      height: 350px!important;
+      width: 250px!important;
+      img{
+        width: 100%!important;
+        height: 100%!important;
+        object-fit: cover;
+      }
+  }
+
 }
 
 @media (min-width:481px) and (max-width:800px) {
+
   p{
     font-size: 16px!important;
   }h1{
@@ -30,12 +46,22 @@
 
 @media (max-width:800px) {
 
+  #more{
+    height: 100%!important;
+    .container{
+      padding:0!important;
+      img{
+        height: 100%!important;
+        width: 100%!important;
+      }
+    }
+  }
+
   nav{
     width: 100%;
     position: fixed;
     background-color: white!important;
   }
-
 
   main{
     justify-content: center;
@@ -81,7 +107,14 @@
 }
 
 @media (min-width:1915px) {
+  .grid{
+    grid-template-columns: repeat( auto-fit, minmax(550px, 1fr) )!important;  
+  }
 
+  .container{
+    height: 550px!important;
+    width: 350px!important;
+  }
 
   .circle{
     &-s{

@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import ReactDOM from 'react-dom';
-import productList from "./productList.js";
+import productList,{gallery,banner,moban,mobSlide,mobFeat} from "./productList.js";
 import { useMediaQuery } from 'react-responsive';
 import {ViewModuleRounded as Grid,ViewHeadline as Flex} from '@material-ui/icons';
 import anime from 'animejs';
@@ -136,6 +136,27 @@ function More(){
     }
   }
 
+    const large = useMediaQuery({
+      query:'(min-width: 1440px)'
+    });
+
+  const slide = (ndx,slides)=>{
+    if(ndx == slides.length) ndx=1;
+    slides.forEach((item) => {
+      item.style.display="none";
+      item.style.opacity="0";
+    });
+
+    slides[ndx-1].style.display = "block";
+    slides[ndx-1].style.opacity = "1";
+    ndx=ndx+1;
+    setTimeout(()=>slide(ndx,slides),2500);
+  };
+
+  const redirect = (url)=>{
+    window.location.href = url;
+  };
+
     useEffect(()=>{
       anime({
         targets: ".grid img",
@@ -143,16 +164,20 @@ function More(){
         duration:1500,
         delay: anime.stagger(200),
       });
+      let slideNdx=1;
+      let elem = document.querySelectorAll(".carousel");
+      slide(slideNdx,elem);
     });
 
   return(
       <main className={mobile?"flex flex-jc-ce m-20 grow z-1 pos-rel":"flex flex-jc-ce m-20 p-20 grow z-1 pos-rel"} id="more">
         {mobile?
           <div>
-            <header className="w-100 flex flex-ai-ce" id="banner">
-              <div className="flex flex-flx-col flex-jc-ce p-20 w-30 h-per">
-                <h1>Change BG here</h1>
-                <p className="m-t-2">Testing</p>
+            <header className="w-100 flex flex-ai-ce m-t-15" id="banner">
+              <div key="index" className="car-cont p-10 w-100">
+                {moban.map((item,index) => (
+                  <img src={item.src} alt={item.alt} className="carousel fade"/>
+                ))}
               </div>
             </header>
               <div className="flex flex-flx-col">
@@ -163,10 +188,10 @@ function More(){
                 </div>
 
                 <div className="flex flex-flx-col flex-jc-ce flex-ai-ce m-t-5 p-20" id="cont">
-                  {productList.map((item,ndx) => (
-                    <div className="container m-t-5 flex flex-flx-col flex-jc-ce">
-                      <img key={ndx} src={item.src} alt={item.alt}/>
-                      <div className="flex flex-flx-col flex-ai-ce m-t-2">
+                  {gallery.map((item,ndx) => (
+                    <div className="container m-t-5 flex flex-flx-col flex-jc-ce" onClick={()=>redirect(item.link)}>
+                      <img key={ndx} src={item.src} alt={item.alt} onClick={()=>redirect(item.link)}/>
+                      <div className="flex flex-flx-col flex-ai-ce flex-jc-ce m-t-2">
                         <p className="align-center">{item.alt.substring(0,16)}</p>
                       </div>
                     </div>
@@ -176,20 +201,19 @@ function More(){
               </div>
           </div>
           :<div className="flex flex-flx-col w-100">
-            <header className="w-100 flex flex-ai-ce" id="banner">
-              <div className="flex flex-flx-col flex-jc-ce p-20 w-30 h-per">
-                <h1>Change BG here</h1>
-                <p className="m-t-2">Testing</p>
-              </div>
+            <header className="w-100 flex flex-jc-ce flex-ai-ce m-b-2 pos-rel" id="banner">
+              {banner.map((item,index) => (
+                <img src={item.src} alt={item.alt} className="carousel fade"/>
+              ))}
             </header>
             <div className="grid w-100">
-              {productList.map((item,ndx)=>(
-                <div className="container flex flex-flx-col flex-jc-ce">
+              {gallery.map((item,ndx)=>(
+                <div className="container flex flex-flx-col flex-jc-ce" onClick={()=>redirect(item.link)}>
                   <div className="flex flex-jc-ce">
-                    <img key={ndx} src={item.src} alt={item.alt}/>
+                    <img key={ndx} src={item.src} alt={item.alt} onClick={()=>redirect(item.link)}/>
                   </div>
                   <div className="flex flex-flx-col flex-ai-ce m-t-2">
-                    <h2 className="align-center font-rob">{item.alt.length >= 16?item.alt.substring(0,16)+"...":item.alt}</h2>
+                    <p className="align-center font-rob">{item.alt.length >= 16?item.alt.substring(0,16)+"...":item.alt}</p>
                   </div>
                 </div>
               ))}

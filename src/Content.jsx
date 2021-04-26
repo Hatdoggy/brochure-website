@@ -41,8 +41,8 @@ function Content(){
       <hr/>
       <p className="m-t-5 w-80 align-center">Specializes in selling direct bodega Baguette bags, brand new clothes, branded overruns, as well as thrifted and reworked items</p>
         <div className="flex m-t-5 flex-jc-ce">
-          <a href="https://www.facebook.com/kpaestheticsph"><Facebook fontSize={large?"large":"default"} style={{fill:"#2c2c2c"}}/></a>
-          <a href="https://www.instagram.com/kpaestheticsph/"><Instagram fontSize={large?"large":"default"} style={{fill:"#2c2c2c"}}/></a>
+          <a href="https://www.facebook.com/kpaestheticsph"><Facebook fontSize={large||mobile?"large":"default"} style={{fill:"#2c2c2c"}}/></a>
+          <a href="https://www.instagram.com/kpaestheticsph/"><Instagram fontSize={large||mobile?"large":"default"} style={{fill:"#2c2c2c"}}/></a>
         </div>
     </div>
       <img className={mobile && "h-per"} src={mobile?"./img/Mobile.png":"./img/Main Image.png"} id="main-bg"/>
