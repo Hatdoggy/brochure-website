@@ -154,7 +154,6 @@ html{
   //   }
   // }
   height: 500px;
-  overflow: hidden;
   .carousel{
     width: 100%;
     height: 100%;
@@ -168,7 +167,10 @@ html{
   height: 529px;
 }
 #dsc{
-  max-width: 500px;
+  overflow: hidden;
+    overflow-y: scroll;
+  scrollbar-width:none;
+  scroll-behavior: smooth;
 }
 
 .over{
@@ -196,6 +198,9 @@ html{
   }
   &-per{
     height: 100%;
+  }
+  &-50{
+    height: 50%;
   }
   &-main{
     height: calc(100vh-100px);
@@ -264,7 +269,7 @@ svg{
     cursor: pointer;
     color:white;
     background-color: $theme;
-    border: none;
+    border-color:$theme;
   }
 }
 
@@ -285,6 +290,8 @@ svg{
   }
   #av-size{
     display: flex;
+    justify-content: center;
+    width: 100%;
   }
   span{
     margin-left: 10px;
@@ -298,7 +305,7 @@ svg{
 }
 
 body{
-  background-image: url("./img/BG1.jpg");
+  background-image: url("/img/bg/window.jpg");
   background-size: cover;
   background-color: rgba(255,255,255,0.5);
   background-repeat: no-repeat;
@@ -410,6 +417,11 @@ body{
   &-40{
     padding: 40px;
   }
+  &-t{
+    &-20{
+      padding-top: 20px;
+    }
+  }
 }
 
 .m{
@@ -518,6 +530,12 @@ body{
   }
 }
 
+.disp{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .pos{
   &-rel{
     position: relative;
@@ -579,6 +597,10 @@ body{
   padding: 15px;
 }
 
+#more{
+  margin-top: 5%;
+}
+
 html{
     ::-webkit-scrollbar{
       width:5px;
@@ -624,7 +646,7 @@ html{
 }
 
 nav{
-  height: 10%!important;
+  height: auto;
   a{
     &:hover{
       cursor: pointer;

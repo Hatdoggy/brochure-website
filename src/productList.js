@@ -1,37 +1,37 @@
 const list = [
   {
-    src:"./img/slide/slide3.jpg",
+    src:"https://dl.dropboxusercontent.com/s/c3j011g40mvflbe/slide3.jpg?dl=0",
     alt:"Puff Red dress",
     size:["S"],
     desc:"Part of 6th SUSTAINABLE COLLECTION Boutique Dresses from Korea"
   },
   {
-    src:"./img/slide/slide4.jpg",
+    src:"https://dl.dropboxusercontent.com/s/wg8kewtias43r5h/slide4.jpg?dl=0",
     alt:"Green dress",
     size:["S","M"],
     desc:"Part of 6th SUSTAINABLE COLLECTION Boutique Dresses from Korea"
   },
   {
-    src:"./img/slide/slide1.jpg",
+    src:"https://dl.dropboxusercontent.com/s/z5woqiuuas9wp5h/slide1.jpg?dl=0",
     alt:"Academia Polo Jumper Dress",
     size:["S","M"],
     desc:"Part of 6th SUSTAINABLE COLLECTION Boutique Dresses from Korea"
   },
   {
-    src:"./img/slide/slide2.jpg",
+    src:"https://dl.dropboxusercontent.com/s/v01wqvjufupdb9f/slide2.jpg?dl=0",
     alt:"Puff Floral Dress",
     size:["XS","M"],
     desc:"Part of 6th SUSTAINABLE COLLECTION Boutique Dresses from Korea"
   },
   {
-    src:"./img/slide/slide5.jpg",
+    src:"https://dl.dropboxusercontent.com/s/j5bota4v5oyml93/slide5.jpg?dl=0",
     alt:"Blue dress",
     size:["S"],
     desc:"Part of 6th SUSTAINABLE COLLECTION Boutique Dresses from Korea"
   },
   {
-    src:"./img/slide/slide6.jpg",
-    alt:"Boutique Quality Jumpsuit dress",
+    src:"https://dl.dropboxusercontent.com/s/uun5u99cuwgraiu/slide6.jpg?dl=0",
+    alt:"Jumpsuit dress",
     size:["XS","M"],
     desc:"BOUTIQUE QUALITY DRESSES WAVE 2"
   },
@@ -41,85 +41,85 @@ export default list;
 
 const gallery = [
   {
-    src:"./img/feat/feat1.jpg",
+    src:"https://dl.dropboxusercontent.com/s/293k0k7me6bve8r/feat1.jpg?dl=0",
     alt:"Black graphic dress",
     size:["S","M"],
     desc:"BOUTIQUE QUALITY DRESSES WAVE 2",
     link:"https://www.instagram.com/p/CNcZCAKAK8s/"
   },
   {
-    src:"./img/feat/feat2.jpg",
+    src:"https://dl.dropboxusercontent.com/s/m7ze4dpy0ioma4l/feat2.jpg?dl=0",
     alt:"Black dress",
     size:["S","M"],
     desc:"BOUTIQUE QUALITY DRESSES WAVE 2",
     link:"https://www.instagram.com/p/CNcZCAKAK8s/"
   },
   {
-    src:"./img/feat/feat3.jpg",
+    src:"https://dl.dropboxusercontent.com/s/ca1pbwfsl99dgsh/feat3.jpg?dl=0",
     alt:"Summer Floral dress",
     size:["S"],
     desc:"BOUTIQUE QUALITY DRESSES WAVE 2",
     link:"https://www.instagram.com/p/CNcWLCDL0WJ/"
   },
   {
-    src:"./img/feat/feat4.jpg",
+    src:"https://dl.dropboxusercontent.com/s/z8z7n76rs0hx9y6/feat4.jpg?dl=0",
     alt:"Jumpsuit dress",
     size:["S","L"],
     desc:"BOUTIQUE QUALITY DRESSES WAVE 2",
     link:"https://www.instagram.com/p/CNcVgi_sunQ/"
   },
   {
-    src:"./img/feat/feat5.jpg",
+    src:"https://dl.dropboxusercontent.com/s/86jisq7rns9jqn6/feat5.jpg?dl=0",
     alt:"White dress",
     size:["S","M"],
     desc:"Part of 6th SUSTAINABLE COLLECTION Boutique Dresses from Korea",
     link:"https://www.instagram.com/p/CNFN0FMl5n2/"
   },
   {
-    src:"./img/feat/feat6.jpg",
+    src:"https://dl.dropboxusercontent.com/s/jha7mixajp8kdmo/feat6.jpg?dl=0",
     alt:"Blue dress",
     size:["S","M"],
     desc:"Part of 6th SUSTAINABLE COLLECTION Boutique Dresses from Korea",
     link:"https://www.instagram.com/p/CNFPtNNL6Hu/"
   },
   {
-    src:"./img/feat/feat8.jpg",
+    src:"https://dl.dropboxusercontent.com/s/mn0qdejxfsg4g8k/feat8.jpg?dl=0",
     alt:"Academia Polo Jumper Dress",
     size:["S","M"],
     desc:"Part of 6th SUSTAINABLE COLLECTION Boutique Dresses from Korea",
     link:"https://www.instagram.com/p/CNFRsW3FjJO/"
   },
   {
-    src:"./img/feat/feat9.jpg",
+    src:"https://dl.dropboxusercontent.com/s/24zlr9ti0miyb6m/feat9.jpg?dl=0",
     alt:"Puff Floral Dress",
     size:["XS","M"],
     desc:"Part of 6th SUSTAINABLE COLLECTION Boutique Dresses from Korea",
     link:"https://www.facebook.com/kpaestheticsph/photos/117231823781582"
   },
   {
-    src:"./img/feat/feat10.jpg",
+    src:"https://dl.dropboxusercontent.com/s/uf22ljp209xndw8/feat10.jpg?dl=0",
     alt:"Puff Red dress",
     size:["S"],
     desc:"Part of 6th SUSTAINABLE COLLECTION Boutique Dresses from Korea",
     link:"https://www.instagram.com/p/CNFTogOFfxo/"
   },
   {
-    src:"./img/feat/feat11.jpg",
+    src:"https://dl.dropboxusercontent.com/s/ykmni69bxwk39f5/feat11.jpg?dl=0",
     alt:"Green dress",
     size:["S","M"],
     desc:"Part of 6th SUSTAINABLE COLLECTION Boutique Dresses from Korea",
     link:"https://www.instagram.com/p/CNE_Ok0lU0K/"
   },
   {
-    src:"./img/feat/feat12.jpg",
+    src:"https://dl.dropboxusercontent.com/s/j44755bm2ronw4i/feat12.jpg?dl=0",
     alt:"Blue dress",
     size:["S"],
     desc:"Part of 6th SUSTAINABLE COLLECTION Boutique Dresses from Korea",
     link:"https://www.instagram.com/p/CNFPtNNL6Hu/"
   },
   {
-    src:"./img/feat/feat13.jpg",
-    alt:"Boutique Quality Jumpsuit dress",
+    src:"https://dl.dropboxusercontent.com/s/4aq5nna1t3a68rr/feat13.jpg?dl=0",
+    alt:"Jumpsuit dress",
     size:["XS","M"],
     desc:"BOUTIQUE QUALITY DRESSES WAVE 2",
     link:"https://www.instagram.com/p/CNcVgi_sunQ/"
@@ -128,125 +128,125 @@ const gallery = [
 
 const banner = [
   {
-    src:"./img/banner/ban1.svg",
+    src:"https://dl.dropboxusercontent.com/s/ia958ik7o9sf6qr/ban1.svg?dl=0",
     alt:"ban1",
   },
   {
-    src:"./img/banner/ban2.svg",
+    src:"https://dl.dropboxusercontent.com/s/wk3frt7enhy9nys/ban2.svg?dl=0",
     alt:"ban2",
   },
   {
-    src:"./img/banner/ban3.svg",
+    src:"https://dl.dropboxusercontent.com/s/40bigoco8duptdr/ban3.svg?dl=0",
     alt:"ban3",
   },
   {
-    src:"./img/banner/ban1.1.svg",
+    src:"https://dl.dropboxusercontent.com/s/acs4izq4sdggxoz/ban1.1.svg?dl=0",
     alt:"ban3",
   }
 ];
 
 const moban = [
   {
-    src:"./img/banner/moban1.svg",
+    src:"https://dl.dropboxusercontent.com/s/vqq48rtfsnhtc2b/moban1.svg?dl=0",
     alt:"ban1",
   },
   {
-    src:"./img/banner/moban2.svg",
+    src:"https://dl.dropboxusercontent.com/s/f6r8t6gyrc7d22c/moban2.svg?dl=0",
     alt:"ban2",
   },
   {
-    src:"./img/banner/moban3.svg",
+    src:"https://dl.dropboxusercontent.com/s/am81pk5nf1w66vu/moban3.svg?dl=0",
     alt:"ban3",
   },
 ];
 
 const mobFeat= [
   {
-    src:"./img/mobile/mobile-feat2.jpg",
-    alt:"Boutique Quality Jumpsuit dress",
+    src:"https://dl.dropboxusercontent.com/s/vgfnd6m9yqnirvk/mobile-feat2.jpg?dl=0",
+    alt:"Jumpsuit dress",
     size:["XS","M"],
     desc:"BOUTIQUE QUALITY DRESSES WAVE 2",
     link:"https://www.instagram.com/p/CNFRsW3FjJO/"
 },
   {
-    src:"./img/mobile/mobile-feat3.jpg",
+    src:"https://dl.dropboxusercontent.com/s/du336vnn2bgs05k/mobile-feat3.jpg?dl=0",
     alt:"Blue dress",
     size:["S","M"],
     desc:"Part of 6th SUSTAINABLE COLLECTION Boutique Dresses from Korea",
     link:"https://www.instagram.com/p/CNFPtNNL6Hu/"
 },
   {
-    src:"./img/mobile/mobile-feat4.jpg",
+    src:"https://dl.dropboxusercontent.com/s/2i7i7c9jw317qjd/mobile-feat4.jpg?dl=0",
     alt:"Black dress",
     size:["S","M"],
     desc:"BOUTIQUE QUALITY DRESSES WAVE 2",
     link:"https://www.instagram.com/p/CNcZCAKAK8s/"
 },
   {
-    src:"./img/mobile/mobile-feat5.jpg",
+    src:"https://dl.dropboxusercontent.com/s/7nb9ej7xq1v24ws/mobile-feat5.jpg?dl=0",
     alt:"Summer Floral dress",
     size:["S"],
     desc:"BOUTIQUE QUALITY DRESSES WAVE 2",
     link:"https://www.instagram.com/p/CNcWLCDL0WJ/"
 },
   {
-    src:"./img/mobile/mobile-feat6.jpg",
+    src:"https://dl.dropboxusercontent.com/s/hoivd2cb5xszgr3/mobile-feat6.jpg?dl=0",
     alt:"Jumpsuit dress",
     size:["S","L"],
     desc:"BOUTIQUE QUALITY DRESSES WAVE 2",
     link:"https://www.instagram.com/p/CNcVgi_sunQ/"
 },
   {
-    src:"./img/mobile/mobile-feat7.jpg",
+    src:"https://dl.dropboxusercontent.com/s/nuzkihu1bzbmjhm/mobile-feat7.jpg?dl=0",
     alt:"Cardigan Black dress",
     size:["S","M"],
     desc:"BOUTIQUE QUALITY DRESSES WAVE 2",
     link:"https://www.facebook.com/kpaestheticsph/photos/120907673413997"
   },
   {
-    src:"./img/mobile/mobile-slide1.jpg",
+    src:"https://dl.dropboxusercontent.com/s/b8kfgy06oky1z72/mobile-slide1.jpg?dl=0",
     alt:"Blue dress",
     size:["S","M"],
     desc:"Part of 6th SUSTAINABLE COLLECTION Boutique Dresses from Korea",
     link:"https://www.instagram.com/p/CNFPtNNL6Hu/"
   },
   {
-    src:"./img/mobile/mobile-slide2.jpg",
+    src:"https://dl.dropboxusercontent.com/s/z2lj1djdfwhia2b/mobile-slide2.jpg?dl=0",
     alt:"Academia Polo Jumper Dress",
     size:["S","M"],
     desc:"Part of 6th SUSTAINABLE COLLECTION Boutique Dresses from Korea",
     link:"https://www.instagram.com/p/CNFRsW3FjJO/"
   },
   {
-    src:"./img/mobile/mobile-slide3.jpg",
+    src:"https://dl.dropboxusercontent.com/s/2hyq4i20i3cm94c/mobile-slide3.jpg?dl=0",
     alt:"Puff Floral Dress",
     size:["XS","M"],
     desc:"Part of 6th SUSTAINABLE COLLECTION Boutique Dresses from Korea",
     link:"https://www.facebook.com/kpaestheticsph/photos/117231823781582"
   },
   {
-    src:"./img/mobile/mobile-slide4.jpg",
+    src:"https://dl.dropboxusercontent.com/s/m7ttk80x3rxsrzi/mobile-slide4.jpg?dl=0",
     alt:"Puff Red dress",
     size:["S"],
     desc:"Part of 6th SUSTAINABLE COLLECTION Boutique Dresses from Korea",
     link:"https://www.instagram.com/p/CNFTogOFfxo/"
   },
   {
-    src:"./img/mobile/mobile-slide5.jpg",
+    src:"https://dl.dropboxusercontent.com/s/yjfyakyss76jgro/mobile-slide5.jpg?dl=0",
     alt:"Green dress",
     size:["S","M"],
     desc:"Part of 6th SUSTAINABLE COLLECTION Boutique Dresses from Korea",
     link:"https://www.instagram.com/p/CNE_Ok0lU0K/"
   },
   {
-    src:"./img/mobile/mobile-slide6.jpg",
+    src:"https://dl.dropboxusercontent.com/s/d45e8imbpmf8zlk/mobile-slide6.jpg?dl=0",
     alt:"Black graphic dress",
     size:["S","M"],
     desc:"BOUTIQUE QUALITY DRESSES WAVE 2",
     link:"https://www.instagram.com/p/CNcZCAKAK8s/"
   },
   {
-    src:"./img/mobile/mobile-slide7.jpg",
+    src:"https://dl.dropboxusercontent.com/s/n42gyidgk1whatk/mobile-slide7.jpg?dl=0",
     alt:"White dress",
     size:["S","M"],
     desc:"Part of 6th SUSTAINABLE COLLECTION Boutique Dresses from Korea",
@@ -256,43 +256,43 @@ const mobFeat= [
 
 const mobSlide= [
   {
-    src:"./img/mobile/mobile-slide1.jpg",
+    src:"https://dl.dropboxusercontent.com/s/b8kfgy06oky1z72/mobile-slide1.jpg?dl=0",
     alt:"Blue dress",
     size:["S","M"],
     desc:"Part of 6th SUSTAINABLE COLLECTION Boutique Dresses from Korea"
   },
   {
-    src:"./img/mobile/mobile-slide2.jpg",
+    src:"https://dl.dropboxusercontent.com/s/z2lj1djdfwhia2b/mobile-slide2.jpg?dl=0",
     alt:"Academia Polo Jumper Dress",
     size:["S","M"],
     desc:"Part of 6th SUSTAINABLE COLLECTION Boutique Dresses from Korea"
   },
   {
-    src:"./img/mobile/mobile-slide3.jpg",
+    src:"https://dl.dropboxusercontent.com/s/2hyq4i20i3cm94c/mobile-slide3.jpg?dl=0",
     alt:"Puff Floral Dress",
     size:["XS","M"],
     desc:"Part of 6th SUSTAINABLE COLLECTION Boutique Dresses from Korea"
   },
   {
-    src:"./img/mobile/mobile-slide4.jpg",
+    src:"https://dl.dropboxusercontent.com/s/m7ttk80x3rxsrzi/mobile-slide4.jpg?dl=0",
     alt:"Puff Red dress",
     size:["S"],
     desc:"Part of 6th SUSTAINABLE COLLECTION Boutique Dresses from Korea"
   },
   {
-    src:"./img/mobile/mobile-slide5.jpg",
+    src:"https://dl.dropboxusercontent.com/s/yjfyakyss76jgro/mobile-slide5.jpg?dl=0",
     alt:"Green dress",
     size:["S","M"],
     desc:"Part of 6th SUSTAINABLE COLLECTION Boutique Dresses from Korea"
   },
   {
-    src:"./img/mobile/mobile-slide6.jpg",
+    src:"https://dl.dropboxusercontent.com/s/d45e8imbpmf8zlk/mobile-slide6.jpg?dl=0",
     alt:"Black graphic dress",
     size:["S","M"],
     desc:"BOUTIQUE QUALITY DRESSES WAVE 2"
   },
   {
-    src:"./img/mobile/mobile-slide7.jpg",
+    src:"https://dl.dropboxusercontent.com/s/n42gyidgk1whatk/mobile-slide7.jpg?dl=0",
     alt:"White dress",
     size:["S","M"],
     desc:"Part of 6th SUSTAINABLE COLLECTION Boutique Dresses from Korea"

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import productList,{gallery,banner,moban,mobSlide,mobFeat} from "./productList.js";
 import { useMediaQuery } from 'react-responsive';
 import {ViewModuleRounded as Grid,ViewHeadline as Flex} from '@material-ui/icons';
+import {Link} from "react-router-dom";
 import anime from 'animejs';
 
 function Products(prop){
@@ -11,19 +12,32 @@ function Products(prop){
       query: '(max-width: 480px)'
     })
 
+    const pad = useMediaQuery({
+      query:'(min-width:768px) and (max-width:1024px)'
+    });
+
+    const [src,setSrc] = useState({
+      src:"https://dl.dropboxusercontent.com/s/c3j011g40mvflbe/slide3.jpg?dl=0",
+      alt:"Puff Red dress"
+    });
+
     const [desc,setDesc] = useState({
       item:"Puff Red dress",
       descr:"Part of 6th SUSTAINABLE COLLECTION Boutique Dresses from Korea",
       size:["S"]
     });
 
-    const scroll = (event)=>{
-      let y = event.deltaY;
-      let x = event.deltaX;
-      let target = event.currentTarget;
-      event.preventDefault();
-      target.scrollLeft+=y*50;
-    }
+    useEffect(()=>{
+      let slide = document.querySelector("#kp-slide");
+
+      slide.addEventListener("wheel",(event)=>{
+        let y = event.deltaY;
+        event.preventDefault();
+        slide.scrollLeft += y*5;
+      });
+    });
+
+    const [pos,updPos]=useState(0);
 
     const selected = (event)=>{
       let item = event.target.alt;
@@ -33,6 +47,11 @@ function Products(prop){
         item:sel.alt,
         descr:sel.desc,
         size:sel.size
+      });
+
+      setSrc({
+        src:sel.src,
+        alt:sel.alt
       });
     }
 
@@ -48,46 +67,73 @@ function Products(prop){
         })
   });
 
-  if(!mobile){
-    document.body.style.backgroundImage = "url('./img/BG2.jpg')";
-  }
-
   return(
-    <main className="flex flex-jc-ce flex-ai-ce m-20 p-20 grow z-1 pos-rel w-100" id="prods">
+    <main className="flex flex-jc-ce flex-ai-ce m-20 p-20 grow z-1 pos-rel w-100 over-hide" id="prods">
 
-      <div className="flex m-l-2 m-r-2 over-hide w-100">
-        <div className="flex h-cus over-hide over-srl-x" id="kp-slide" onWheel={scroll}>
-          {productList.map((x,index) => (
-          <div className="flex h-per flex-flx-col">
-            <img key={index} src={x.src} alt={x.alt} className="h-per m-l-2" id="prod-img" onClick={selected}/>
-            {mobile &&
-                <div className="flex flex-jc-ce flex-flx-col flex-ai-ce m-l-2" id="item-desc">
-                  <h4 className="m-t-5 align-center">{x.alt}</h4>
-                  <p className="w-50 m-t-5" id="descr">{x.desc}</p>
-                    <div id="av-size" className="flex flex-jc-ce m-t-5">
-                      {x.size.map((i,index)=>(
-                        <span key={index} className="size">{i}</span>
-                      ))}
-                    </div>
-                </div>
-            }
-          </div>
-          ))}
-        </div>
-      {!mobile &&
-          <div id="dsc" className="m-l-5 w-100">
-            <h1 id="item">{desc.item}</h1>
-              <p className="w-50 m-t-2" id="descr">{desc.descr}</p>
-            <div className="flex sizes m-t-2">
-              <p>Available Sizes</p>
-              <div id="av-size">
-                {desc.size.map((x,index)=>(
-                <span key={index} className="size">{x}</span>
-                ))}
-              </div>
+      <div className="flex m-l-2 m-r-2 over-hide w-100" id="kp-cont">
+        <div className="flex flex-jc-ce flex-ai-ce flex-flx-col p-20 w-50">
+
+          {pad?
+            <div className="flex flex-jc-ce flex-ai-ce flex-flx-col w-50">
+          <div className="flex flex-jc-ce flex-ai-ce flex-flx-col p-20 h-50 m-b-2 w-100" id="prv-img">
+            <div className="flex flex-jc-ce flex-ai-ce flex-flx-col p-20 w-100 over-hide">
+              <img className="disp" src={src.src} alt={src.alt}/>
             </div>
-              <a onClick={prop.set} name="more" className="p-2 flex flex-ai-ce flex-jc-ce m-t-5 btn">View more Products</a>
+          </div>
+            <div className="flex h-cus over-hide over-srl-x w-100" id="kp-slide" >
+            {productList.map((x,index) => (
+            <div className="flex h-per flex-flx-col">
+              <img key={index} src={x.src} alt={x.alt} className="h-per m-l-2 product" id="prod-img" onClick={mobile?prop.set:selected}/>
+            </div>))}
+            </div>
+            </div>
+          :
+          <div className="flex h-cus over-hide over-srl-x w-100" id="kp-slide" >
+            {productList.map((x,index) => (
+            <div className="flex h-per flex-flx-col">
+
+              <img key={index} src={x.src} alt={x.alt} className="h-per m-l-2 product" id="prod-img" onClick={mobile?prop.set:selected}/>
+              {mobile && //description of product in mobile
+                  <div className="flex flex-jc-ce flex-flx-col flex-ai-ce m-l-2" id="item-desc" >
+                    <h4 className="m-t-5 align-center">{x.alt}</h4>
+                    <p className="w-50 m-t-5" id="descr">{x.desc}</p>
+                      <div id="av-size" className="flex flex-jc-ce m-t-5">
+                        {x.size.map((i,index)=>(
+                          <span key={index} className="size">{i}</span>
+                        ))}
+                      </div>
+                  </div>
+              }
+            </div>
+            ))}
+          </div>}
+
+          {!mobile && //description for pad or desktop
+            <div id="dsc" className="w-100">
+              <h4 id="item" className="align-center">{desc.item}</h4>
+              <div className="flex flex-flx-col m-t-2">
+                <p className="w-100 m-t-2 align-center" id="descr">{desc.descr}</p>
+                <div className="flex sizes m-t-2 w-100">
+                  <div id="av-size">
+                    {desc.size.map((x,index)=>(
+                      <span key={index} className="size">{x}</span>
+                    ))}
+                  </div>
+                </div>
+              <Link to="/more">
+                <a className="p-2 flex flex-ai-ce flex-jc-ce m-t-2 btn" onClick={prop.set} name="more">More Products</a>
+              </Link>
+            </div>
+          </div>}
+        </div>
+
+      {!pad&&
+        <div className="flex flex-jc-ce flex-ai-ce flex-flx-col p-20 h-vh-100 w-50">
+          <div className="flex flex-jc-ce flex-ai-ce flex-flx-col p-20 w-100 over-hide">
+            <img className="disp" src={src.src} alt={src.alt}/>
+          </div>
         </div>}
+
     </div>
     </main>
   );

@@ -1,10 +1,11 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import ReactDOM from 'react-dom';
 import { useMediaQuery } from 'react-responsive';
 import {Menu} from '@material-ui/icons';
 import {Drawer,Button} from '@material-ui/core';
 import { Link } from 'react-scroll';
 import anime from 'animejs';
+import {Link as RLink} from "react-router-dom";
 
 function Header(prop){
 
@@ -13,6 +14,14 @@ function Header(prop){
     const mobile = useMediaQuery({
       query: '(max-width: 800px)'
     })
+
+    const pad = useMediaQuery({
+      query:'(min-width:1024px) and (max-width:1300px)'
+    });
+
+    const lar = useMediaQuery({
+      query:'(min-width: 1440px)'
+    });
 
   if(!mobile){
     document.body.style.backgroundImage = "url('./img/BG1.jpg')";
@@ -41,13 +50,27 @@ function Header(prop){
           })
   }
 
+  useEffect(()=>{
+    let clicks = document.querySelectorAll(".click");
+
+    clicks.forEach((item) => {
+      item.addEventListener("click",()=>prop.res(false));
+    });
+
+    // clicks.addEventListener("click",console.log("Hello"));
+  });
+
+  const sample = ()=>{
+    console.log("Henlo");
+  }
+
   return(
     <nav className={mobile?"m-l-auto flex flex-jc-e p-5 m-r-2 z-50 shadow":"m-l-auto flex flex-jc-e p-5 m-r-2 z-50 "}>
-    {mobile &&
+    {(mobile||pad)?
       <header className="flex w-100">
       <div className="flex w-100 p-20 flex-ai-ce">
         <img src="./img/KPLogo.jpg" className="logo"/>
-      </div>
+
       <Button>
         <Menu onClick={()=>setBtn(true)} onClose={()=>setBtn(false)}/>
           <Drawer anchor="top" open={btn} onClose={()=>{setBtn(!btn)}}>
@@ -57,25 +80,33 @@ function Header(prop){
               <a className="m-r-2 p-20"  name="contact" onClick={prop.set} name="more">More Products</a>
             </div>
           :<div className="flex flex-jc-e flex-flx-col flex-ai-e">
-            <a className="m-r-2 p-20"  name="contact" ><Link to="about" spy={true} smooth={true}>About</Link></a>
-            <a className="m-r-2 p-20"  name="contact" ><Link to="prods" spy={true} smooth={true}>Featured products</Link></a>
+            <a className="m-r-2 p-20"  name="about" ><Link to="about" spy={true} smooth={true}>About</Link></a>
+            <a className="m-r-2 p-20"  name="product" ><Link to="prods" spy={true} smooth={true}>Featured products</Link></a>
             <a className="m-r-2 p-20"  name="contact" ><Link to="contact" spy={true} smooth={true}>Contact</Link></a>
             <a className="m-r-2 p-20"  name="contact" onClick={prop.set} name="more">More Products</a>
           </div>}
 
           </Drawer>
-      </Button>
+      </Button></div>
       </header>
-    }
-    {!mobile &&
-      <div className="flex p-20 flex-ai-ce">
-        <a className="" onClick={prop.set} name="about">About</a>
-        <a className="m-l-5" onClick={prop.set}  name="product">Featured</a>
-        <a className="m-l-5 m-r-5" onClick={prop.set}  name="contact">Contact</a>
-          <div className="m-l-2">
-            <img src="./img/KPLogo.jpg" className="logo"/>
-          </div>
-      </div>
+    :
+      prop.cur?
+        <div className="flex p-20 flex-ai-ce">
+          <a className="" onClick={prop.set} name="about"><RLink to="/">Home</RLink></a>
+            <div className="m-l-5">
+              <img src="https://dl.dropboxusercontent.com/s/4y7b9n6sni0fbji/KPLogo.jpg?dl=0" className="logo"/>
+            </div>
+        </div>
+      :
+        <div className="flex p-20 flex-jc-ce flex-ai-ce">
+            <div className="m-l-2">
+              <img src="https://dl.dropboxusercontent.com/s/4y7b9n6sni0fbji/KPLogo.jpg?dl=0" className="logo"/>
+            </div>
+          <a className="m-l-5 click" name="about">{lar?<RLink to="/">About</RLink>:<Link to="about" spy={true} smooth={true}>About</Link>}</a>
+          <a className="m-l-5 click" name="product">{lar?<RLink to="/prod">Featured</RLink>:<Link to="prods" spy={true} smooth={true}>Featured</Link>}</a>
+          <a className="m-l-5 click" name="contact">{lar?<RLink to="/cont">Contact</RLink>:<Link to="contact" spy={true} smooth={true}>Contact</Link>}</a>
+
+        </div>
     }
     </nav>
   );

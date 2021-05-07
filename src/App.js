@@ -11,7 +11,11 @@ import { useMediaQuery } from 'react-responsive';
 function App() {
 
     const mobile = useMediaQuery({
-      query: '(max-width: 800px)'
+      query: '(max-width: 480px)'
+    });
+
+    const pad = useMediaQuery({
+      query:'(min-width:481px) and (max-width:1366px)'
     });
 
     const styles ={
@@ -31,6 +35,8 @@ function App() {
   });
 
   const curFunc = (key)=>{
+    if(cur.clicked)setCur({clicked:false});
+
     setCur({
       about:false,
       product:false,
@@ -41,35 +47,51 @@ function App() {
     });
   };
 
-  const reset = ()=>{
+  const reset = (check)=>{
+    let type = typeof check;
 
-  document.body.style.backgroundImage = "url('./img/BG1.jpg')";
-  console.log(document.body.style.backgroundImage);
+    if(type !== "undefined" && check === false){
+        setCur({
+          clicked:true,
+        });
+    }else {
     setCur({
+      clicked:false,
       more:false
     });
+    }
   }
 
   return (
+    <Router basename={process.env.PUBLIC_URL}>
     <div className={cur.more?"flex flex-flx-col":"h-vh-100 flex flex-flx-col"}>
       <Header set={curFunc} cur={cur.more} res={reset}/>
-      {mobile?
+
+      {mobile||pad?
             (cur.more?<More/>:
               <div>
                 <Content classes={styles}/>
-                <Products/>
+                <Products set={curFunc}/>
                 <Contact classes={styles}/>
               </div>
             )
             :
             <div className={cur.more?"flex":"flex h-vh-100"}>
-              {cur.about && <Content classes={styles}/>}
-              {cur.product && <Products set={curFunc}/>}
-              {cur.more && <More/>}
-              {cur.contact && <Contact classes={styles}/>}
+              <Switch>
+                <Route exact path="/" component={Content}/>
+                <Route exact path="/prod" component={Products}/>
+
+                <Route exact path="/cont">
+                  <Contact classes={styles}/>
+                </Route>
+
+                <Route exact path="/more" component={More}/>
+              </Switch>
             </div>}
-      {!mobile && <Circles setClick={cur.clicked?reset:undefined}/>}
+
+      {!(mobile&&cur.clicked) && <Circles setClick={cur.clicked?reset:undefined}/>}
     </div>
+    </Router>
   );
 }
 

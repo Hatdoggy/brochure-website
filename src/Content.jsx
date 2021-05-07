@@ -12,13 +12,17 @@ function Content(){
       query: '(max-width: 800px)'
     })
 
+    const pad = useMediaQuery({
+      query:'(min-width:1024px) and (max-width:1366px)'
+    });
+
+    const bet = useMediaQuery({
+      query:'(min-width:481px) and (max-width:800px)'
+    });
+
     const large = useMediaQuery({
       query:'(min-width: 1280px)'
     });
-
-  if(!mobile){
-    document.body.style.backgroundImage = "url('./img/BG1.jpg')";
-  }
 
   const [load,setLoad] =useState(false);
 
@@ -45,7 +49,9 @@ function Content(){
           <a href="https://www.instagram.com/kpaestheticsph/"><Instagram fontSize={large||mobile?"large":"default"} style={{fill:"#2c2c2c"}}/></a>
         </div>
     </div>
-      <img className={mobile && "h-per"} src={mobile?"./img/Mobile.png":"./img/Main Image.png"} id="main-bg"/>
+    {(bet||large)&&
+      <img className={mobile && "h-per"} src={(mobile||pad)?"https://dl.dropboxusercontent.com/s/1popbq86irl29dc/main%201.jpg?dl=0":"https://dl.dropboxusercontent.com/s/81m35hymrhkz3ne/Main%20Image.png"} id="main-bg"/>
+    }
     </main>
   );
 }

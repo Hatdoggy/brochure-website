@@ -27,7 +27,7 @@ function Circle(prop){
   gen();
 
   return(
-    <span className="z-0">
+    <span className="z-0" id="circ-cont">
       <div className="circle circle-s pos-abs abs-r" id="c1"></div>
       <div className="circle circle-m pos-abs abs-t" id="c2"></div>
       <div className="circle circle-l pos-abs abs-m" id="c3"></div>
