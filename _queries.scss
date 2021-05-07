@@ -1,13 +1,17 @@
 @import "_variables";
 
-@media (max-width:480px) {
+@media (max-width:1366px) {
+  body{
+    background-image: none !important;
+  }
+}
+
+@media (max-width:800px) {
   #about{
     padding: 0!important;
   }
   #moreHead{
-    background-image: url("./img/BG3.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-image: none !important;
   }
   .container{
       height: 350px!important;
@@ -28,11 +32,9 @@
   }h1{
     font-size: 32px!important;
   }
-
-  body{
-    background-image: url("./img/BG1.jpg")!important;
+  #about{
+    overflow: hidden;
   }
-
     #prods{
       height: 100vh!important;
       #kp-slide,img{
@@ -61,6 +63,9 @@
     width: 100%;
     position: fixed;
     background-color: white!important;
+    .MuiButtonBase-root {
+        margin-left: auto;
+    }
   }
 
   main{
@@ -73,6 +78,17 @@
       right: auto;
       width: auto!important;
       height: 100vh!important;
+    }
+    .f-col{
+      #contact-bg{
+        height: 100%!important;
+        object-fit: contain;
+      }
+      #descr{
+        background-color: rgba(0, 0, 0, 0.05);
+        justify-content: center;
+        height: 50%;
+      }
     }
     #kp-slide{
       height: 545px!important;
@@ -89,9 +105,6 @@
           border-color: white!important;
         }
       }
-    }
-    #main-bg{
-      display: none;
     }
     div{
       width: 100%!important;
@@ -114,6 +127,134 @@
   }
 }
 
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1023px)
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+    nav{
+      height: auto!important;
+      .MuiButtonBase-root {
+        margin-left: auto;
+      }
+    }
+
+    #circ-cont{
+      width: 100%!important;
+      position: fixed;
+    }
+
+    #bg-cont{
+      #contact-bg2{
+        display: none!important;
+      }#contact-bg{
+        width: 400px!important;
+        height: auto!important;
+        top: 20%!important;
+      }
+    }
+
+    #about{
+      justify-content: flex-start;
+      #white{
+        width: 50%!important;
+        background-color: inherit!important;
+      }
+      img{
+        display: block;
+        width: 350px!important;
+        height: auto!important;
+        right: 0 !important;
+        left: 50% !important;
+        top: 25%;
+      }
+    }
+
+    #prods{
+      #kp-cont{
+        flex-direction: column!important;
+        align-items: center!important;
+        #prv-img{
+          width: 50%!important;
+          img{
+            width: 100%!important;
+            height: 100%!important;
+          }
+        }
+        #kp-slide{
+          height: 150px!important;
+          width: 80%!important;
+        }
+        #dsc{
+          margin-top: 5%!important;
+          margin-left:0!important;
+        }
+      }
+    }
+}
+
+@media only screen
+  and (min-device-width: 1024px)
+  and (max-device-width: 1366px)
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+    nav{
+      position: fixed;
+      width: 100%;
+      justify-content: flex-start!important;
+      background: white;
+    }
+
+    main{
+      height: 100vh!important;
+    }
+
+    #bg-cont{
+      #contact-bg{
+        width: 370px !important;
+        height: auto !important;
+        top: 15% !important;
+      }
+    }
+
+    #about{
+      justify-content: flex-start;
+      #white{
+        width: 50%!important;
+        background-color: inherit!important;
+      }
+      img{
+        width: 350px !important;
+        top: 15%;
+        height: auto !important;
+        left: 60% !important;
+      }
+    }
+
+    #circ-cont{
+      width: 100%!important;
+      position: fixed!important;
+    }
+
+    #prods{
+      #kp-cont{
+        flex-direction: row!important;
+        align-items: flex-start!important;
+        #kp-slide{
+          height: 400px!important;
+        }
+        #dsc{
+          margin-top: 2%!important;
+          max-height: 450px!important;
+          .btn{
+            width: 100%!important;
+          }
+        }
+      }
+    }
+
+}
+
 @media (min-width:800px) and (max-width:2555px) {
   #root{
     margin-left: 50px;
@@ -122,7 +263,13 @@
 }
 
 @media (min-width:1915px) {
+
+  #banner{
+    height: auto!important;
+  }
+
   .grid{
+    margin-top: 5%!important;
     grid-template-columns: repeat( auto-fit, minmax(550px, 1fr) )!important;
   }
 
@@ -227,6 +374,10 @@
     }
     #kp-slide{
       height: 750px!important;
+    }#dsc{
+      margin-top: 5%;
+      max-height: 750px!important;
+
     }
   }
 }
