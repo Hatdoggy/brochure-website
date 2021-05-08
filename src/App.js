@@ -61,7 +61,7 @@ function App() {
   }
 
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    <Router>
     <div className={cur.more?"flex flex-flx-col":"h-vh-100 flex flex-flx-col"}>
       <Header set={curFunc} cur={cur.more} res={reset}/>
 
