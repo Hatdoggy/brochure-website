@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Header from './Header';
 import Circles from './Circles.jsx';
 import {More} from './Products.jsx';
-import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import {HashRouter as Router, Switch, Route} from "react-router-dom";
 import { useMediaQuery } from 'react-responsive';
 import Main from './Main.jsx';
 
