@@ -17,7 +17,7 @@ function Content(){
     });
 
     const bet = useMediaQuery({
-      query:'(min-width:481px) and (max-width:800px)'
+      query:'(min-width:481px) and (max-width:1279px)'
     });
 
     const large = useMediaQuery({
@@ -50,7 +50,7 @@ function Content(){
         </div>
     </div>
     {(bet||large)&&
-      <img className={mobile && "h-per"} src={(mobile||pad)?"https://dl.dropboxusercontent.com/s/1popbq86irl29dc/main%201.jpg?dl=0":"https://dl.dropboxusercontent.com/s/81m35hymrhkz3ne/Main%20Image.png"} id="main-bg"/>
+      <img className={mobile && "h-per"} src="https://dl.dropboxusercontent.com/s/1popbq86irl29dc/main%201.jpg?dl=0" id="main-bg"/>
     }
     </main>
   );

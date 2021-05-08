@@ -5,11 +5,11 @@ import { useMediaQuery } from 'react-responsive';
 function Circle(prop){
 
     const big = useMediaQuery({
-      query: '(max-width: 1919px)'
+      query: '(min-width: 1919px)'
     })
 
   const gen = ()=>{
-    return Math.floor(Math.random()*(!big?850:400));
+    return Math.floor(Math.random()*(!big?850:420));
   };
 
   useEffect(()=>{

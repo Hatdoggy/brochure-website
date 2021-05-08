@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { useMediaQuery } from 'react-responsive';
 import {Menu} from '@material-ui/icons';
 import {Drawer,Button} from '@material-ui/core';
-import { Link } from 'react-scroll';
+import { Link,animateScroll as scroll } from 'react-scroll';
 import anime from 'animejs';
 import {Link as RLink} from "react-router-dom";
 
@@ -24,7 +24,6 @@ function Header(prop){
     });
 
   if(!mobile){
-    document.body.style.backgroundImage = "url('./img/BG1.jpg')";
     anime({
       targets: ["nav a","nav div"],
       translateY:[-50,0],
@@ -57,15 +56,15 @@ function Header(prop){
       item.addEventListener("click",()=>prop.res(false));
     });
 
-    // clicks.addEventListener("click",console.log("Hello"));
   });
+
 
   const sample = ()=>{
     console.log("Henlo");
   }
 
   return(
-    <nav className={mobile?"m-l-auto flex flex-jc-e p-5 m-r-2 z-50 shadow":"m-l-auto flex flex-jc-e p-5 m-r-2 z-50 "}>
+    <nav className={mobile?"m-l-auto flex p-5 m-r-2 z-50 shadow":"m-l-auto flex p-5 m-r-2 z-50 "}>
     {(mobile||pad)?
       <header className="flex w-100">
       <div className="flex w-100 p-20 flex-ai-ce">
@@ -76,14 +75,14 @@ function Header(prop){
           <Drawer anchor="top" open={btn} onClose={()=>{setBtn(!btn)}}>
           {prop.cur?
             <div className="flex flex-jc-e flex-flx-col flex-ai-e">
-              <a className="m-r-2 p-20"  name="contact" onClick={prop.res} name="more">Home</a>
+              <a className="m-r-2 p-20"  name="contact" onClick={prop.res} name="more"><RLink to="/">Home</RLink></a>
               <a className="m-r-2 p-20"  name="contact" onClick={prop.set} name="more">More Products</a>
             </div>
           :<div className="flex flex-jc-e flex-flx-col flex-ai-e">
             <a className="m-r-2 p-20"  name="about" ><Link to="about" spy={true} smooth={true}>About</Link></a>
             <a className="m-r-2 p-20"  name="product" ><Link to="prods" spy={true} smooth={true}>Featured products</Link></a>
             <a className="m-r-2 p-20"  name="contact" ><Link to="contact" spy={true} smooth={true}>Contact</Link></a>
-            <a className="m-r-2 p-20"  name="contact" onClick={prop.set} name="more">More Products</a>
+            <a className="m-r-2 p-20" onClick={prop.set}><RLink to="/more" name="more">More Products</RLink></a>
           </div>}
 
           </Drawer>
@@ -91,20 +90,20 @@ function Header(prop){
       </header>
     :
       prop.cur?
-        <div className="flex p-20 flex-ai-ce">
-          <a className="" onClick={prop.set} name="about"><RLink to="/">Home</RLink></a>
-            <div className="m-l-5">
+        <div className="flex p-20 flex-ai-ce flex-jc-ce w-100">
+            <div className="">
               <img src="https://dl.dropboxusercontent.com/s/4y7b9n6sni0fbji/KPLogo.jpg?dl=0" className="logo"/>
             </div>
+          <a className="m-l-5" onClick={prop.set} name="about"><RLink to="/">Home</RLink></a>
         </div>
       :
-        <div className="flex p-20 flex-jc-ce flex-ai-ce">
+        <div className="flex p-20 flex-jc-ce flex-ai-ce w-100">
             <div className="m-l-2">
               <img src="https://dl.dropboxusercontent.com/s/4y7b9n6sni0fbji/KPLogo.jpg?dl=0" className="logo"/>
             </div>
-          <a className="m-l-5 click" name="about">{lar?<RLink to="/">About</RLink>:<Link to="about" spy={true} smooth={true}>About</Link>}</a>
-          <a className="m-l-5 click" name="product">{lar?<RLink to="/prod">Featured</RLink>:<Link to="prods" spy={true} smooth={true}>Featured</Link>}</a>
-          <a className="m-l-5 click" name="contact">{lar?<RLink to="/cont">Contact</RLink>:<Link to="contact" spy={true} smooth={true}>Contact</Link>}</a>
+          <a className="m-l-5 click" name="about"><Link to="about" spy={true} smooth={true}>About</Link></a>
+          <a className="m-l-5 click" name="product"><Link to="prods" spy={true} smooth={true}>Featured</Link></a>
+          <a className="m-l-5 click" name="contact"><Link to="contact" spy={true} smooth={true}>Contact</Link></a>
 
         </div>
     }

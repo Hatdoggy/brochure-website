@@ -71,7 +71,7 @@ function Products(prop){
     <main className="flex flex-jc-ce flex-ai-ce m-20 p-20 grow z-1 pos-rel w-100 over-hide" id="prods">
 
       <div className="flex m-l-2 m-r-2 over-hide w-100" id="kp-cont">
-        <div className="flex flex-jc-ce flex-ai-ce flex-flx-col p-20 w-50">
+        <div className="flex flex-jc-ce flex-ai-ce flex-flx-col p-20 w-50" id="cont">
 
           {pad?
             <div className="flex flex-jc-ce flex-ai-ce flex-flx-col w-50">
@@ -109,7 +109,7 @@ function Products(prop){
           </div>}
 
           {!mobile && //description for pad or desktop
-            <div id="dsc" className="w-100">
+            <div id="dsc" className="w-100 m-t-5">
               <h4 id="item" className="align-center">{desc.item}</h4>
               <div className="flex flex-flx-col m-t-2">
                 <p className="w-100 m-t-2 align-center" id="descr">{desc.descr}</p>
@@ -121,7 +121,7 @@ function Products(prop){
                   </div>
                 </div>
               <Link to="/more">
-                <a className="p-2 flex flex-ai-ce flex-jc-ce m-t-2 btn" onClick={prop.set} name="more">More Products</a>
+                <a className="p-2 flex flex-ai-ce flex-jc-ce m-t-2 btn w-100" onClick={prop.set} name="more">More Products</a>
               </Link>
             </div>
           </div>}
@@ -218,8 +218,8 @@ function More(){
   return(
       <main className={mobile?"flex flex-jc-ce m-20 grow z-1 pos-rel":"flex flex-jc-ce m-20 p-20 grow z-1 pos-rel"} id="more">
         {mobile?
-          <div>
-            <header className="w-100 flex flex-ai-ce m-t-15" id="banner">
+          <div className="h-vh-100">
+            <header className="w-100 flex flex-ai-ce m-t-15  over-hide" id="banner">
               <div key="index" className="car-cont p-10 w-100">
                 {moban.map((item,index) => (
                   <img src={item.src} alt={item.alt} className="carousel fade"/>

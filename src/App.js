@@ -1,12 +1,11 @@
 import React,{useState} from 'react';
 import ReactDOM from 'react-dom';
 import Header from './Header';
-import Content from './Content';
 import Circles from './Circles.jsx';
-import Products,{More} from './Products.jsx';
-import Contact from './Contact.jsx';
+import {More} from './Products.jsx';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import { useMediaQuery } from 'react-responsive';
+import Main from './Main.jsx';
 
 function App() {
 
@@ -18,14 +17,6 @@ function App() {
       query:'(min-width:481px) and (max-width:1366px)'
     });
 
-    const styles ={
-    logo: {
-      '&:hover': {
-         background: "#ffb185",
-      }
-    }
-    };
-
   const [cur,setCur] = useState({
     clicked:false,
     about:true,
@@ -36,7 +27,6 @@ function App() {
 
   const curFunc = (key)=>{
     if(cur.clicked)setCur({clicked:false});
-
     setCur({
       about:false,
       product:false,
@@ -46,6 +36,14 @@ function App() {
       [key.target.name]:true
     });
   };
+
+    const styles ={
+    logo: {
+      '&:hover': {
+         background: "#ffb185",
+      }
+    }
+    };
 
   const reset = (check)=>{
     let type = typeof check;
@@ -63,33 +61,18 @@ function App() {
   }
 
   return (
-    <Router basename={`/${process.env.PUBLIC_URL}`}>
+    <Router>
     <div className={cur.more?"flex flex-flx-col":"h-vh-100 flex flex-flx-col"}>
       <Header set={curFunc} cur={cur.more} res={reset}/>
 
-      {mobile||pad?
-            (cur.more?<More/>:
-              <div>
-                <Content classes={styles}/>
-                <Products set={curFunc}/>
-                <Contact classes={styles}/>
-              </div>
-            )
-            :
-            <div className={cur.more?"flex":"flex h-vh-100"}>
-              <Switch>
-                <Route exact path="/" component={Content}/>
-                <Route exact path="/prod" component={Products}/>
+      <Switch>
+        <Route path="/" exact render={(props) => (
+          <Main styles={styles} curFunc={curFunc} />
+      )}/>
+        <Route path="/more" component={More}/>
+      </Switch>
 
-                <Route exact path="/cont">
-                  <Contact classes={styles}/>
-                </Route>
-
-                <Route exact path="/more" component={More}/>
-              </Switch>
-            </div>}
-
-      {!(mobile&&cur.clicked) && <Circles setClick={cur.clicked?reset:undefined}/>}
+      {!mobile && <Circles setClick={cur.clicked?reset:undefined}/>}
     </div>
     </Router>
   );
